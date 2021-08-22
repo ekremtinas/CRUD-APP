@@ -1,0 +1,13 @@
+some dependecies I used in this project
+
+npm install express mongoose
+npm install nodemon
+yarn add axios OU npm install axios
+yarn add cors ou npm install cors
+
+//how to use
+yarn run devServer - to init the devServer
+connect to mongo compass
+and yarn start on client side
+
+:)
