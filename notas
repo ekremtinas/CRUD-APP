@@ -1,5 +1,8 @@
 some dependecies I used in this project
 
+yarn add react-router bootstrap reactstrap uuid
+yarn add react-router-dom
+
 npm install express mongoose
 npm install nodemon
 yarn add axios OU npm install axios

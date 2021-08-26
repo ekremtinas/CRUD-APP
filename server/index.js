@@ -1,14 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const FoodModel = require("./models/Food");
+const BookModel = require("./models/book");
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-    "mongodb+srv://dbUser:parafernalha@crud.j1xvh.mongodb.net/food?retryWrites=true&w=majority",
+    "mongodb+srv://dbUser:parafernalha@crud.j1xvh.mongodb.net/book?retryWrites=true&w=majority",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -16,12 +16,14 @@ mongoose.connect(
 );
 
 app.post("/insert", async (req, res) => {
-    const foodName = req.body.foodName;
-    const days = req.body.days;
+    const bookName = req.body.bookName;
+    const bookPrice = req.body.bookPrice;
+    const bookAuthor = req.body.bookAuthor;
 
-    const food = new FoodModel({ foodName: foodName, daysSinceIAte: days });
+    const book = new BookModel({ bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor });
+
     try {
-        await food.save();
+        await book.save();
         res.send("inserted data");
     } catch (err) {
         console.log(err);
@@ -30,7 +32,7 @@ app.post("/insert", async (req, res) => {
 
 app.get("/read", async (req, res) => {
     // FoodModel.find({$where: {foodName:  "Apple"}}, )
-    FoodModel.find({}, (err, results) => {
+    BookModel.find({}, (err, results) => {
         if (err) {
             res.send(err);
         }
