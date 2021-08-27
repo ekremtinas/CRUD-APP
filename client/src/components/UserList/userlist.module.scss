@@ -32,7 +32,7 @@
     }
     tbody {
         tr {
-            padding: 30px;
+
             border-bottom: 1px solid #dddddd;
             &:nth-child(even){
                 background: #f3f3f3;
@@ -43,6 +43,26 @@
             }
 
             td{
+                &:last-child{
+                    width: 193px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 16px;
+                    button{
+                        & :first-child{
+                            margin-right: 5px;
+                            margin-bottom: 5px;
+                        }
+
+                        margin-left: 10px;
+                        border-radius: 5px;
+                        border: none;
+                        background: rgb(247, 65, 65);
+                        color: white;
+                        padding: 7px 10px;
+                    }
+                }
                 padding: 12px 15px;
             }
         }

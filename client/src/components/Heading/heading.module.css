@@ -1,15 +1,24 @@
 .header {
-  background: #3b3b3b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: white;
+  color: red;
+  height: 35px;
 }
 
 .header nav li {
   list-style: none;
+}
+
+.header nav li .add_user {
+  padding: 10px 16px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  background: #16b8e0;
+  color: white;
 }
 /*# sourceMappingURL=heading.module.css.map */

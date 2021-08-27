@@ -1,12 +1,21 @@
 .header{
-    background: rgb(59, 59, 59);
+    // background: rgb(59, 59, 59);
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: red;
+    height: 35px;
 
     nav{
         li{
             list-style: none;
+            .add_user{
+                padding: 10px 16px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                text-decoration: none;
+                background: rgb(22, 184, 224);
+                color: white;
+            }
         }
     }
 }
