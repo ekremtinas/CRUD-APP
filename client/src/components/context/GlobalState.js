@@ -1,5 +1,5 @@
-import React, { createContext, useReducer } from 'react';
-
+import React, { createContext, useReducer, useState, useEffect } from 'react';
+import Axios from "axios";
 import {AppReducer} from './AppReducer';
 
 //initial state;
@@ -12,8 +12,13 @@ export const GlobalContext = createContext(initialState);
 
 // provider component;
 export const GlobalProvider = (({children}) => {
+    // const [booklist, setBookList] = useState([])
     const [state, dispatch] = useReducer(AppReducer, initialState);
-
+        useEffect(() => {
+            Axios.get("http://localhost:3004/read").then((response) => {
+                dispatch({type: 'INITIAL_DATA', payload: response.data})
+            });
+        }, []);
 
     //actions
     const removeUser = (id) => {
@@ -28,6 +33,7 @@ export const GlobalProvider = (({children}) => {
             type: 'ADD_USER',
             payload: user
         })
+        console.log(user)
     }
 
     const editUser = (user) => {
@@ -39,10 +45,10 @@ export const GlobalProvider = (({children}) => {
      
     return(
         <GlobalContext.Provider value={{
-            users: state.users,
+            books: state.users,
             removeUser,
             addUser,
-            editUser
+            editUser,
         }}>
             {children}
         </GlobalContext.Provider>

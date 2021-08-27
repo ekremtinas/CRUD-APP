@@ -16,11 +16,12 @@ mongoose.connect(
 );
 
 app.post("/insert", async (req, res) => {
+    // const id = req.body.id;
     const bookName = req.body.bookName;
     const bookPrice = req.body.bookPrice;
     const bookAuthor = req.body.bookAuthor;
 
-    const book = new BookModel({ bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor });
+    const book = new BookModel({/*id: id,*/ bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor });
 
     try {
         await book.save();
@@ -42,13 +43,18 @@ app.get("/read", async (req, res) => {
 });
 
 app.put("/update", async (req, res) => {
-    const newFoodName = req.body.newFoodName;
     const id = req.body.id;
+    const bookName = req.body.bookName;
+    const bookAuthor = req.body.bookAuthor
+    const bookPrice = req.body.bookPrice
+
 
     try {
-        await FoodModel.findById(id, (err, updatedFood) => {
-            updatedFood.foodName = newFoodName;
-            updatedFood.save();
+        await BookModel.findById(id, (err, updateBook) => {
+            updateBook.bookName = bookName;
+            updateBook.bookAuthor = bookAuthor;
+            updateBook.bookPrice = bookPrice;
+            updateBook.save();
             res.send("updated");
         });
     } catch (err) {
@@ -58,7 +64,7 @@ app.put("/update", async (req, res) => {
 
 app.delete("/delete/:id", async (req, res) => {
     const id = req.params.id;
-    await FoodModel.findByIdAndRemove(id).exec();
+    await BookModel.findByIdAndRemove(id).exec();
     res.send("deleted");
 });
 

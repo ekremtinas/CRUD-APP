@@ -1,11 +1,16 @@
 export const AppReducer =  (state, action) => {
 
     switch (action.type) {
+        case 'INITIAL_DATA':
+            return {
+                users: [...action.payload]
+            }
+
         case 'REMOVE_USER':
             return {
                 users: state.users.filter(user => {
                     return(
-                        user.id !== action.payload
+                        user._id !== action.payload
                     )
                 })
             }
@@ -18,7 +23,7 @@ export const AppReducer =  (state, action) => {
             const updateUser = action.payload;
 
             const updateUsers = state.users.map(user => {
-                if(user.id === updateUser.id){
+                if(user._id === updateUser._id){
                     return updateUser; 
                 }
 

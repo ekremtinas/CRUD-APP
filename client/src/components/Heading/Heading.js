@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import styles from './heading.module.css'
 import {
     Navbar,
     Nav,
@@ -10,19 +11,23 @@ import {
 
 const Heading = () => {
     return(
-        <Navbar color="dark" dark>
-            <Container>
+        <>
+        <header className={styles.header}>
+            <div>
                 <NavbarBrand href="/">
                     My Team
                 </NavbarBrand>
-            </Container>
+                
+            </div>
 
-            <Nav>
-                <NavItem>   
+            <nav>
+                <li>   
                     <Link className="btn btn-primary" to="/add">Add User</Link>
-                </NavItem>
-            </Nav>
-        </Navbar>
+                </li>
+            </nav>
+        </header>
+        
+        </>
     )
 }
 

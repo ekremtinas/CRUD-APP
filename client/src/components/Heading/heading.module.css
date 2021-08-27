@@ -1,0 +1,15 @@
+.header {
+  background: #3b3b3b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+.header nav li {
+  list-style: none;
+}
+/*# sourceMappingURL=heading.module.css.map */

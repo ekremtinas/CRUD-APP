@@ -33,14 +33,10 @@ function App() {
     //     Axios.delete(`http://localhost:3004/delete/${id}`);
     // };
 
-    // useEffect(() => {
-    //     Axios.get("http://localhost:3004/read").then((response) => {
-    //         setFoodList(response.data);
-    //     });
-    // }, []);
+
 
     return (
-        <div style={{maxWidth: '30rem', margin: "4rem auto"}}>
+        <div className="wrapper">
             <GlobalProvider>
                 <Router>
                     <Switch>
