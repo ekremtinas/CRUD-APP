@@ -2,9 +2,7 @@ import React, {useState, useContext} from 'react';
 import { GlobalContext } from "../context/GlobalState";
 import { Link, useHistory } from 'react-router-dom';
 import Axios from "axios";
-import {v4 as uuid} from 'uuid';
 import {
-    Form,
     FormGroup,
     Label,
     Input,
@@ -20,16 +18,13 @@ const AddUser = () => {
 
     const onSubmit = function(e){
         e.preventDefault();
-        // let id = uuid();
         const newUser = {
-            // id: id,
             bookName: bookName,
             bookAuthor: bookAuthor,
             bookPrice: bookPrice
         }
         
         Axios.post("http://localhost:3004/insert", {
-            // id: id,
             bookName: bookName,
             bookPrice: bookPrice,
             bookAuthor: bookAuthor

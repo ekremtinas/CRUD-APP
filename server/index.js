@@ -16,12 +16,11 @@ mongoose.connect(
 );
 
 app.post("/insert", async (req, res) => {
-    // const id = req.body.id;
     const bookName = req.body.bookName;
     const bookPrice = req.body.bookPrice;
     const bookAuthor = req.body.bookAuthor;
 
-    const book = new BookModel({/*id: id,*/ bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor });
+    const book = new BookModel({bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor });
 
     try {
         await book.save();
@@ -69,5 +68,5 @@ app.delete("/delete/:id", async (req, res) => {
 });
 
 app.listen(3004, () => {
-    console.log("server runnig on port 3003");
+    console.log("server runnig on port 3004");
 });

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
-import { ListGroup, ListGroupItem, Button } from "reactstrap";
+import { Button } from "reactstrap";
 import Axios from "axios";
 import styles from "./userlist.module.css";
 
@@ -11,7 +11,6 @@ const UserList = () => {
     const removeHandler = (id) => {
         removeUser(id);
         Axios.delete(`http://localhost:3004/delete/${id}`);
-
     };
 
     return (
@@ -37,7 +36,6 @@ const UserList = () => {
                                 <td>
                                     <div className="ml-auto">
                                         <Link to={`/edit/${book._id}`} >
-                                            {console.log(book._id)}
                                             Edit
                                         </Link>
                                         <Button
@@ -61,39 +59,3 @@ const UserList = () => {
 };
 
 export default UserList;
-
-{
-    /* <tr class="active-row">
-                                    <td>2</td>
-                                    <td>Sally</td>
-                                    <td>72, 400</td>
-                                    <td>Students</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Nick</td>
-                                    <td>52, 300</td>
-                                    <td>dcode</td>
-                                </tr> */
-}
-
-// <li className="d-flex" key={user.id} className={styles.item}>
-//     <div className={styles.title}>
-//         o senhor dos aneis
-//     </div>
-//     <div className={styles.author}>
-//         j r r tolkien
-//     </div>
-//     <div className={styles.category}>
-//         terror
-//     </div>
-//     <div className="ml-auto">
-//         <Link to={`/edit/${user.id}`}>Edit</Link>
-//         <Button
-//             onClick={() => removeUser(user.id)}
-//             color="danger"
-//         >
-//             Delete
-//         </Button>
-//     </div>
-// </li>

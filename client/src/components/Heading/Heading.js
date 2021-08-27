@@ -2,11 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styles from './heading.module.css'
 import {
-    Navbar,
-    Nav,
-    NavItem,
     NavbarBrand,
-    Container
 } from 'reactstrap';
 
 const Heading = () => {
@@ -19,7 +15,6 @@ const Heading = () => {
                 </NavbarBrand>
                 
             </div>
-
             <nav>
                 <li>   
                     <Link className="btn btn-primary" to="/add">Add User</Link>

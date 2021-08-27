@@ -2,8 +2,12 @@ export const AppReducer =  (state, action) => {
 
     switch (action.type) {
         case 'INITIAL_DATA':
+            const data = []
+            action.payload.forEach((app) => {
+                data.unshift(app);
+            })
             return {
-                users: [...action.payload]
+                users: data
             }
 
         case 'REMOVE_USER':
@@ -21,7 +25,6 @@ export const AppReducer =  (state, action) => {
 
         case 'EDIT_USER':
             const updateUser = action.payload;
-
             const updateUsers = state.users.map(user => {
                 if(user._id === updateUser._id){
                     return updateUser; 

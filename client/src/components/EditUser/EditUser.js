@@ -10,7 +10,6 @@ import {
     Button,
 } from 'reactstrap';
 
-
 const EditUser = (props) => {
     const [selectedUser, setSelectedUser] = useState({
         bookName: '',
