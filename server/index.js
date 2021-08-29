@@ -19,8 +19,8 @@ app.post("/insert", async (req, res) => {
     const bookName = req.body.bookName;
     const bookPrice = req.body.bookPrice;
     const bookAuthor = req.body.bookAuthor;
-
-    const book = new BookModel({bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor });
+    const bookCategory = req.body.bookCategory
+    const book = new BookModel({bookName: bookName, bookPrice: bookPrice, bookAuthor: bookAuthor, bookCategory: bookCategory});
 
     try {
         await book.save();
@@ -46,7 +46,6 @@ app.put("/update", async (req, res) => {
     const bookName = req.body.bookName;
     const bookAuthor = req.body.bookAuthor
     const bookPrice = req.body.bookPrice
-
 
     try {
         await BookModel.findById(id, (err, updateBook) => {

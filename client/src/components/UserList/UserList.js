@@ -33,7 +33,7 @@ const UserList = () => {
                             <tr key={book._id}>
                                 <td>{book.bookName}</td>
                                 <td>{book.bookAuthor}</td>
-                                <td>aventura</td>
+                                <td>{book.bookCategory}</td>
                                 <td>{book.bookPrice}</td>
                                 <td>
                                     <div className="actions">

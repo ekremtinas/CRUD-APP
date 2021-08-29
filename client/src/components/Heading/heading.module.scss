@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     color: red;
-    height: 35px;
+    height: 30px;
 
     nav{
         li{
@@ -12,12 +12,11 @@
                 text-decoration: none;
                 padding: 8px 10px 8px 5px;
                 border-radius: 5px;
-                margin-bottom: 5px;
+                margin-bottom: 1px;
                 background: rgb(22, 184, 224);
                 & :first-child{
                     margin-right: 5px;
-                    font-size: 25px;
-                    margin-bottom: 4px;
+                    font-size: 16px;
                 }
             }
         }

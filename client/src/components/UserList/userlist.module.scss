@@ -46,11 +46,11 @@
                     width: 196px;
                     display: flex;
                     align-items: center;
-                    font-size: 16px;
+                    // font-size: 16px;
 
                     #link {
                         color: black;
-                        padding: 7px 11px;
+                        padding: 8px 10px;
                         background: rgb(248, 245, 72);
                         border-radius: 5px;
                         text-decoration: none;
@@ -64,12 +64,13 @@
                         color: white;
                         & :first-child {
                             margin-right: 5px;
-                            margin-bottom: 5px;
+                            // margin-bottom: 5px;
+                            line-height: 50px;
                         }
 
                         margin-left: 10px;
                         background: rgb(247, 65, 65);
-                        padding: 5px 6px;
+                        padding: 8px 10px;
                     }
                 }
                 padding: 12px 15px;

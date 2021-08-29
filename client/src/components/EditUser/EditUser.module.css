@@ -8,9 +8,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 14px;
 }
 
 .form .buttons .edit_book {
+  font-size: 14px;
   margin-right: 5px;
   padding: 6px 12px 6px 10px;
   background: #f8f548;
@@ -19,8 +21,7 @@
 .form .buttons .link {
   background: #f74141;
   border-radius: 5px;
-  padding: 6px 12px 6px 9px;
-  line-height: 23px;
+  padding: 10px 12px 10px 9px;
   text-decoration: none;
   color: white;
   display: -webkit-box;

@@ -1,16 +1,19 @@
-.form{
+.form {
     width: 400px;
     margin: 0 auto;
     color: rgb(82, 82, 82);
 
-    .buttons{
+    .buttons {
         display: flex;
-        .submit{
+        font-size: 15px;
+        margin-top: 25px;
+        .submit {
             padding: 6px 12px 6px 12px;
             background: rgb(22, 184, 224);
             color: white;
+            font-size: 15px;
         }
-        .link{
+        .link {
             background: rgb(247, 65, 65);
             margin-left: 5px;
             border-radius: 5px;
@@ -21,8 +24,52 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            & :first-child{
+            & :first-child {
                 margin-right: 5px;
+            }
+        }
+    }
+
+    .select {
+        position: relative;
+        display: flex;
+        height: 3em;
+        line-height: 3;
+        overflow: hidden;
+        border-radius: 0.25em;
+        border: 1px solid #ccc;
+        &::after {
+            content: "\25BC";
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 1em;
+            background: #2b2e2e;
+            cursor: pointer;
+            pointer-events: none;
+            transition: 0.25s all ease;
+        }
+
+        &:hover::after {
+            color: #23b499;
+        }
+
+        select {
+            color: rgb(139, 139, 139);
+            width: 200px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            box-shadow: none;
+            border: 0 !important;
+            flex: 1;
+            padding: 0 0.5em;
+            cursor: pointer;
+            font-size: inherit;
+            &::-ms-expand {
+                display: none;
             }
         }
     }

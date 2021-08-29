@@ -2,10 +2,12 @@
     width: 400px;
     margin: 0 auto;
     color: rgb(82, 82, 82);
+    // font-size: 16px;
     .buttons{
         display: flex;
-
+        font-size: 14px;
         .edit_book{
+            font-size: 14px;
             margin-right: 5px;
             padding: 6px 12px 6px 10px;
             background: rgb(248, 245, 72);
@@ -14,8 +16,8 @@
         .link{
             background: rgb(247, 65, 65);
             border-radius: 5px;
-            padding: 6px 12px 6px 9px;
-            line-height: 23px;
+            padding: 10px 12px 10px 9px;
+            // line-height: 23px;
             text-decoration: none;
             color: white;
             display: flex;

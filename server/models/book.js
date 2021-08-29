@@ -11,6 +11,9 @@ const BookSchema = new mongoose.Schema({
     bookPrice: {
         type: Number,
     },
+    bookCategory: {
+        type: String
+    }
 });
 
 const Book =  mongoose.model("Book", BookSchema);
