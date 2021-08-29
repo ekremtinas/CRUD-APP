@@ -2,12 +2,26 @@
     width: 400px;
     margin: 0 auto;
     color: rgb(82, 82, 82);
+    .invalid{
+        border: 1px solid red;
+    }
+
 
     .buttons {
         display: flex;
         font-size: 15px;
         margin-top: 25px;
+        .disabled{
+            transition: 1s;
+            cursor: not-allowed;
+            padding: 6px 12px 6px 12px;
+            background: rgb(152, 153, 153);
+            color: white;
+            font-size: 15px;
+        }
+
         .submit {
+            transition: 1s;
             padding: 6px 12px 6px 12px;
             background: rgb(22, 184, 224);
             color: white;

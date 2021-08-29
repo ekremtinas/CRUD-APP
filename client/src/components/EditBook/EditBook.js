@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import { GlobalContext } from "../context/GlobalState";
 import { Link, useHistory } from 'react-router-dom';
-import styles from './EditUser.module.css';
+import styles from './EditBook.module.css';
 import { BsPencil } from 'react-icons/bs';
 import { GiCancel } from 'react-icons/gi';
 import Button from  '../UI/Button/Button';
@@ -36,6 +36,7 @@ const EditUser = (props) => {
     };
 
     const onSubmit = function(e){
+
         editUser(selectedUser)
         history.push('/')
         updateFood(currentUserId)

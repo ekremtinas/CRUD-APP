@@ -10,6 +10,7 @@ const UserFormField = (props) => {
                 onChange={props.onChange}
                 placeholder={props.placeholder}
                 name={props.name}
+                className={props.className}
             />
         </div>
     );

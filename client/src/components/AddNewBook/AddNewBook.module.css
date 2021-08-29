@@ -4,6 +4,10 @@
   color: #525252;
 }
 
+.form .invalid {
+  border: 1px solid red;
+}
+
 .form .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12,7 +16,19 @@
   margin-top: 25px;
 }
 
+.form .buttons .disabled {
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: not-allowed;
+  padding: 6px 12px 6px 12px;
+  background: #989999;
+  color: white;
+  font-size: 15px;
+}
+
 .form .buttons .submit {
+  -webkit-transition: 1s;
+  transition: 1s;
   padding: 6px 12px 6px 12px;
   background: #16b8e0;
   color: white;
@@ -93,4 +109,4 @@
 .form .select select::-ms-expand {
   display: none;
 }
-/*# sourceMappingURL=AddUser.module.css.map */
+/*# sourceMappingURL=AddNewBook.module.css.map */

@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/GlobalState";
 import { BsPencil } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
 import Axios from "axios";
-import styles from "./userlist.module.css";
+import styles from "./BookList.module.css";
 import Button from "../UI/Button/Button";
 
 const UserList = () => {
