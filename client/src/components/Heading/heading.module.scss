@@ -1,5 +1,4 @@
 .header{
-    // background: rgb(59, 59, 59);
     display: flex;
     justify-content: space-between;
     color: red;
@@ -8,13 +7,18 @@
     nav{
         li{
             list-style: none;
-            .add_user{
-                padding: 10px 16px;
-                border-radius: 5px;
-                margin-bottom: 10px;
-                text-decoration: none;
-                background: rgb(22, 184, 224);
+            .link{
                 color: white;
+                text-decoration: none;
+                padding: 8px 10px 8px 5px;
+                border-radius: 5px;
+                margin-bottom: 5px;
+                background: rgb(22, 184, 224);
+                & :first-child{
+                    margin-right: 5px;
+                    font-size: 25px;
+                    margin-bottom: 4px;
+                }
             }
         }
     }

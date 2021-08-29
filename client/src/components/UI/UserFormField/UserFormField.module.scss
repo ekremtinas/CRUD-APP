@@ -1,0 +1,13 @@
+.form_control {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    input {
+        padding: 10px;
+        color: rgb(82, 82, 82);
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+}

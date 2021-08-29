@@ -6,71 +6,74 @@
     margin: 0 auto;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0, 0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     thead {
         tr {
             background-color: #009879;
             color: #fff;
             text-align: left;
             font-weight: bold;
-            th{
+            th {
                 padding: 12px 15px;
             }
-            .title{
+            .title {
                 width: 400px;
             }
-            .author{
+            .author {
                 width: 200px;
             }
-            .category{
+            .category {
                 width: 200px;
             }
-            .price{
+            .price {
                 width: 100px;
             }
         }
     }
     tbody {
         tr {
-
             border-bottom: 1px solid #dddddd;
-            &:nth-child(even){
+            &:nth-child(even) {
                 background: #f3f3f3;
             }
 
-            &:last-of-type{
+            &:last-of-type {
                 border-bottom: 2px solid #009879;
             }
 
-            td{
-                &:last-child{
-                    width: 193px;
+            td {
+                &:last-child {
+                    width: 196px;
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
                     font-size: 16px;
-                    button{
-                        & :first-child{
+
+                    #link {
+                        color: black;
+                        padding: 7px 11px;
+                        background: rgb(248, 245, 72);
+                        border-radius: 5px;
+                        text-decoration: none;
+                        // margin: 0 5px 0 0;
+                        & :first-child {
+                            margin: 0 5px 0 0;
+                        }
+                    }
+
+                    .button {
+                        color: white;
+                        & :first-child {
                             margin-right: 5px;
                             margin-bottom: 5px;
                         }
 
                         margin-left: 10px;
-                        border-radius: 5px;
-                        border: none;
                         background: rgb(247, 65, 65);
-                        color: white;
-                        padding: 7px 10px;
+                        padding: 5px 6px;
                     }
                 }
                 padding: 12px 15px;
             }
         }
     }
-    
-    
-    // tbody tr.active-row{
-    //     font-weight: bold;
-    //     color: #009879;
-    // }
 }

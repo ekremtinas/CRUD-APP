@@ -13,12 +13,18 @@
   list-style: none;
 }
 
-.header nav li .add_user {
-  padding: 10px 16px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  background: #16b8e0;
+.header nav li .link {
   color: white;
+  text-decoration: none;
+  padding: 8px 10px 8px 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background: #16b8e0;
+}
+
+.header nav li .link :first-child {
+  margin-right: 5px;
+  font-size: 25px;
+  margin-bottom: 4px;
 }
 /*# sourceMappingURL=heading.module.css.map */

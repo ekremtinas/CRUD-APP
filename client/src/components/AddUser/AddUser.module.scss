@@ -1,0 +1,29 @@
+.form{
+    width: 400px;
+    margin: 0 auto;
+    color: rgb(82, 82, 82);
+
+    .buttons{
+        display: flex;
+        .submit{
+            padding: 6px 12px 6px 12px;
+            background: rgb(22, 184, 224);
+            color: white;
+        }
+        .link{
+            background: rgb(247, 65, 65);
+            margin-left: 5px;
+            border-radius: 5px;
+            padding: 6px 12px 6px 9px;
+            line-height: 23px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            & :first-child{
+                margin-right: 5px;
+            }
+        }
+    }
+}

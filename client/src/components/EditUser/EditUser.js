@@ -1,14 +1,12 @@
 import React, {useState, useContext, useEffect} from 'react';
 import { GlobalContext } from "../context/GlobalState";
 import { Link, useHistory } from 'react-router-dom';
+import styles from './EditUser.module.css';
+import { BsPencil } from 'react-icons/bs';
+import { GiCancel } from 'react-icons/gi';
+import Button from  '../UI/Button/Button';
+import UserFormField from '../UI/UserFormField/UserFormField';
 import Axios from "axios";
-import {
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    Button,
-} from 'reactstrap';
 
 const EditUser = (props) => {
     const [selectedUser, setSelectedUser] = useState({
@@ -55,23 +53,41 @@ const EditUser = (props) => {
         setSelectedUser({...selectedUser,[e.target.name]: e.target.value})
     }
 
-
-
     return(
-        <Form onSubmit={onSubmit}>
-            <FormGroup>
-                <Label>Book Title</Label>
-                <Input type="text" name="bookName" value={selectedUser.bookName} onChange={onBookNameChange} placeholder="Enter Book Title"/>
+        <form onSubmit={onSubmit} className={styles.form}>
+            <UserFormField
+                label="Book Title"
+                name="bookName"
+                value={selectedUser.bookName}
+                type="text"
+                placeholder="enter book title"
+                onChange={onBookNameChange}
+            />
 
-                <Label>Book Author</Label>
-                <Input type="text" name="bookAuthor" value={selectedUser.bookAuthor} onChange={onBookAuthorChange} placeholder="Enter Author"/>
+            <UserFormField
+                label="Author"
+                name="bookAuthor"
+                value={selectedUser.bookAuthor}
+                type="text"
+                placeholder="enter book Author"
+                onChange={onBookAuthorChange}
 
-                <Label>Book Price</Label>
-                <Input type="number" name="bookPrice" value={selectedUser.bookPrice} onChange={onBookPriceChange} placeholder="Enter Price"/>
-            </FormGroup>
-            <Button type="submit">Edit Book</Button>
-            <Link to="/" className="btn btn-danger ml-2">Cancel</Link>
-        </Form>
+            />
+
+            <UserFormField
+                label="Price"
+                name="bookPrice"
+                value={selectedUser.bookPrice}
+                type="number"
+                placeholder="enter book price"
+                onChange={onBookPriceChange}
+
+            />
+            <div className={styles.buttons}>
+                <Button type="submit" className={styles.edit_book}> <BsPencil/> Done</Button>
+                <Link to="/" className={styles.link}> <GiCancel/> Cancel</Link>
+            </div>
+        </form>
     )
 }
 

@@ -54,29 +54,36 @@
 }
 
 .content-table tbody tr td:last-child {
-  width: 193px;
+  width: 196px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   font-size: 16px;
 }
 
-.content-table tbody tr td:last-child button {
-  margin-left: 10px;
+.content-table tbody tr td:last-child #link {
+  color: black;
+  padding: 7px 11px;
+  background: #f8f548;
   border-radius: 5px;
-  border: none;
-  background: #f74141;
-  color: white;
-  padding: 7px 10px;
+  text-decoration: none;
 }
 
-.content-table tbody tr td:last-child button :first-child {
+.content-table tbody tr td:last-child #link :first-child {
+  margin: 0 5px 0 0;
+}
+
+.content-table tbody tr td:last-child .button {
+  color: white;
+  margin-left: 10px;
+  background: #f74141;
+  padding: 5px 6px;
+}
+
+.content-table tbody tr td:last-child .button :first-child {
   margin-right: 5px;
   margin-bottom: 5px;
 }

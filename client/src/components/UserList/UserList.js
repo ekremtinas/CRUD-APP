@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
-import { BsPencil } from 'react-icons/bs';
-import { MdDeleteForever } from 'react-icons/md';
-import { Button } from "reactstrap";
+import { BsPencil } from "react-icons/bs";
+import { MdDeleteForever } from "react-icons/md";
 import Axios from "axios";
 import styles from "./userlist.module.css";
+import Button from "../UI/Button/Button";
 
 const UserList = () => {
     const { books, removeUser } = useContext(GlobalContext);
@@ -33,32 +33,27 @@ const UserList = () => {
                             <tr key={book._id}>
                                 <td>{book.bookName}</td>
                                 <td>{book.bookAuthor}</td>
-                                <td>fda</td>
+                                <td>aventura</td>
                                 <td>{book.bookPrice}</td>
                                 <td>
                                     <div className="actions">
-                                            <Link to={`/edit/${book._id}`} style={
-                                                {
-                                                padding: '9px 10px',
-                                                background: 'rgb(248, 245, 72)',
-                                                color: 'black',
-                                                borderRadius: '5px',
-                                                textDecoration: 'none',
-                                                
-                                                }} >
-                                                    <BsPencil style={{margin: '0px 5px 5px 0px', fontSize: '15px'}}/>
-                                                Edit
-                                            </Link>
-                                        <button
-
+                                        <Link
+                                            to={`/edit/${book._id}`}
+                                            id={styles.link}
+                                            className={styles.link}
+                                        >
+                                            <BsPencil />
+                                            Edit
+                                        </Link>
+                                        <Button
                                             onClick={() =>
                                                 removeHandler(book._id)
                                             }
-                                            color="danger"
+                                            className={styles.button}
                                         >
-                                            <MdDeleteForever style={{fontSize: '15px'}} />
+                                            <MdDeleteForever />
                                             Delete
-                                        </button>
+                                        </Button>
                                     </div>
                                 </td>
                             </tr>
