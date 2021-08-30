@@ -23,7 +23,7 @@
 
 
 ## About
-
+CRUD App using MERN Stack, it uses ReactJS for Front-end, NodeJS, Express For the Backend, and Mongo DB as database! in this project, you can have a book collection which has a field for Title, Author, Category and price, you can add, update, and delete items! it has a form validation to make sure that the user doesn't send invalid info to the database.
 
 ## :star: Features
 - [x] Create Book
