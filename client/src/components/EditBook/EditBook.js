@@ -7,12 +7,14 @@ import { GiCancel } from 'react-icons/gi';
 import Button from  '../UI/Button/Button';
 import UserFormField from '../UI/UserFormField/UserFormField';
 import Axios from "axios";
+import SelectCategory from '../UI/SelectCategory/SelectCategory';
 
 const EditUser = (props) => {
     const [selectedUser, setSelectedUser] = useState({
         bookName: '',
         bookAuthor: '',
-        bookPrice: 0
+        bookPrice: 0,
+        bookCategory: ''
     })
     const { books, editUser } = useContext(GlobalContext);
     const history = useHistory();
@@ -25,13 +27,14 @@ const EditUser = (props) => {
     }, [currentUserId, books])
 
     const updateFood = function (id) {
-        const {bookName, bookAuthor, bookPrice} = selectedUser
+        const {bookName, bookAuthor, bookPrice, bookCategory} = selectedUser
 
         Axios.put("http://localhost:3004/update", {
             id: id,
             bookName: bookName,
             bookAuthor: bookAuthor,
-            bookPrice: Number(bookPrice)
+            bookPrice: Number(bookPrice),
+            bookCategory: bookCategory
         });
     };
 
@@ -51,6 +54,10 @@ const EditUser = (props) => {
     }
 
     const onBookPriceChange = function(e){
+        setSelectedUser({...selectedUser,[e.target.name]: e.target.value})
+    }
+
+    const onBookCategoryChange = function(e){
         setSelectedUser({...selectedUser,[e.target.name]: e.target.value})
     }
 
@@ -84,6 +91,8 @@ const EditUser = (props) => {
                 onChange={onBookPriceChange}
 
             />
+            <SelectCategory name="bookCategory" onChange={onBookCategoryChange} value={selectedUser.bookCategory}/>
+
             <div className={styles.buttons}>
                 <Button type="submit" className={styles.edit_book}> <BsPencil/> Done</Button>
                 <Link to="/" className={styles.link}> <GiCancel/> Cancel</Link>

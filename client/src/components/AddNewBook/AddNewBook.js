@@ -6,6 +6,7 @@ import styles from "./AddNewBook.module.css";
 import { GiCancel } from "react-icons/gi";
 import Button from "../UI/Button/Button";
 import UserFormField from "../UI/UserFormField/UserFormField";
+import SelectCategory from "../UI/SelectCategory/SelectCategory";
 
 const AddUser = () => {
     const { addUser } = useContext(GlobalContext);
@@ -149,32 +150,7 @@ const AddUser = () => {
                 className={`${bookPrice.isValid === false ? styles.invalid : ''}`}
             />
 
-            <article className={styles.select}>
-                <select name="cardapio" onChange={onCategoryChange} >
-                    <option value="" selected disabled>
-                        Categories
-                    </option>
-                    <option value="Horror">Horror</option>
-                    <option value="Adventure">Adventure</option>
-                    <option value="Fiction">Fiction</option>
-                    <option value="Nonfiction">Nonfiction</option>
-                    <option value="Tragedy">Tragedy</option>
-                    <option value="Fantasy">Fantasy</option>
-                    <option value="Fairytale">Fairytale</option>
-                    <option value="Crime">Crime</option>
-                    <option value="Mystery">Mystery</option>
-                    <option value="Historical Fiction">
-                        Historical Fiction
-                    </option>
-                    <option value="Humor">Humor</option>
-                    <option value="Fictional Diaries">Fictional Diaries</option>
-                    <option value="Satire">Satire</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Dystopian">Dystopian</option>
-                    <option value="Memoirs">Memoirs</option>
-                    <option value="Self-Help">Self-Help</option>
-                </select>
-            </article>
+            <SelectCategory onChange={onCategoryChange}/>
 
             <div className={styles.buttons}>
                 <Button type="submit" className={`${isFormValid ? styles.submit : styles.disabled}`}>

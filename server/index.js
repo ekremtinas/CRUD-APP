@@ -44,14 +44,15 @@ app.get("/read", async (req, res) => {
 app.put("/update", async (req, res) => {
     const id = req.body.id;
     const bookName = req.body.bookName;
-    const bookAuthor = req.body.bookAuthor
-    const bookPrice = req.body.bookPrice
-
+    const bookAuthor = req.body.bookAuthor;
+    const bookPrice = req.body.bookPrice;
+    const bookCategory = req.body.bookCategory;
     try {
         await BookModel.findById(id, (err, updateBook) => {
             updateBook.bookName = bookName;
             updateBook.bookAuthor = bookAuthor;
             updateBook.bookPrice = bookPrice;
+            updateBook.bookCategory = bookCategory;
             updateBook.save();
             res.send("updated");
         });
